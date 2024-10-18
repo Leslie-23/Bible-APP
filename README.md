@@ -1,8 +1,7 @@
----
-
 # ![The MERN Bible Logo](https://i.imgur.com/Yzffde7.png)
 
-# The MERN Bible  
+# The MERN Bible
+
 **A King James Version reference powered by [BibleSuperSearch](https://api.biblesupersearch.com/)**
 
 [![Heroku](https://img.shields.io/badge/Visit-Site-blueviolet?style=for-the-badge&logo=heroku)](https://mern-bible.herokuapp.com/)
