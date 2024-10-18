@@ -1,5 +1,6 @@
 {
   "name": "mern-bible",
+  "author": "Leslie Paul Ajayi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
