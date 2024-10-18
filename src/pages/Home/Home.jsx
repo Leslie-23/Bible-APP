@@ -1,7 +1,9 @@
 import BibleLogoTwo from "../../components/Icons/BibleLogoTwo";
 import DropChevron from "../../components/Icons/DropChevron";
 import { Disclosure, Transition } from "@headlessui/react";
+import { useState, useEffect } from "react";
 
+const languages = ["English", "Français", "Español", "Deutsch", "中文"];
 const stack = [
   { name: "MongoDB", link: "https://www.mongodb.com/" },
   { name: "Express", link: "https://expressjs.com/" },
@@ -18,6 +20,16 @@ const stackItems = stack.map((item, i) => {
 });
 
 export default function Home() {
+  const [currentLanguage, setCurrentLanguage] = useState(0); // State for language index
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLanguage((prev) => (prev + 1) % languages.length); // Cycle through languages
+    }, 3000); // Change language every 3 seconds
+
+    return () => clearInterval(interval); // Clean up interval on component unmount
+  }, []);
+
   return (
     <div className="mt-24 flex text-center flex-col font-theme text-2xl">
       <div className="m-4 flex mx-auto" style={{ maxWidth: 720, height: 144 }}>
@@ -38,11 +50,18 @@ export default function Home() {
           <a href="https://api.biblesupersearch.com/">BibleSuperSearch</a>
         </span>
       </div>
-      <a href="/search" className="underline">
-        <button className="p-2 m-4 rounded-lg bg-theme-light text-2xl text-theme-dark hover:bg-theme-4 in-expo duration-150">
-          Start Reading
-        </button>
-      </a>
+      <div className="m-4 text-4xl text-white row-span-2">
+        <a href="/search" className="underline">
+          <button className="p-2 m-4 rounded-lg bg-theme-light text-2xl text-theme-dark hover:bg-theme-4 in-expo duration-150">
+            Start Reading
+          </button>
+        </a>
+        <a href="/search" className="underline">
+          <button className="p-2 m-4 rounded-lg bg-theme-light text-2xl text-theme-dark hover:bg-theme-4 in-expo duration-150">
+            {languages[currentLanguage]} {/* Dynamic language text */}
+          </button>
+        </a>
+      </div>
       <div className="m-4 text-theme-light">
         <a href="/login" className="hover:text-theme-4">
           Log In

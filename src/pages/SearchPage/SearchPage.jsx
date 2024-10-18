@@ -23,9 +23,38 @@ export default function SearchPage() {
 
   return (
     <div className="mt-12 bg-primary text-center">
-      <h1 className="my-8 font-theme text-white text-3xl">Search for a Bible Chapter</h1>
-      <SearchForm getQueryObj={getQueryObj} setLoading={setLoading}/>
-      <Text chapterMeta={chapterMeta} loading={loading} setLoading={setLoading}/>
+      <h1 className="my-8 font-theme text-white text-3xl">
+        Search for a Bible Chapter
+      </h1>
+      <SearchForm getQueryObj={getQueryObj} setLoading={setLoading} />
+      <Text
+        chapterMeta={chapterMeta}
+        loading={loading}
+        setLoading={setLoading}
+      />
     </div>
   );
 }
+
+// import React from "react";
+
+// export default function Text({ chapterMeta, loading, setLoading }) {
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (!chapterMeta || !chapterMeta.verses) {
+//     return <div>No verses available</div>;
+//   }
+
+//   return (
+//     <div className="text-left mx-auto max-w-4xl p-6">
+//       {chapterMeta.verses.map((verse, index) => (
+//         <div key={index} className="my-4">
+//           <p className="text-lg text-white">{verse.text}</p>
+//           <hr className="my-2 border-theme-light" />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
