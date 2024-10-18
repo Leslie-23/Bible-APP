@@ -23,10 +23,11 @@ app.use(require("./config/auth"));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/search", require("./routes/api/search"));
 app.use("/api/saved", require("./routes/api/saved"));
+
 // "catch all" route
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// app.get("/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Backend is running!" });
