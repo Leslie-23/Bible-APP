@@ -14,7 +14,8 @@ export default function NavDropdown({ user, handleLogout }) {
               as="button"
               className="absolute top-0 right-0 w-12 h-12 text-white border-4 border-theme-light rounded-full"
             >
-              {user.username.split(" ")[0][0]}
+              {/* {user.username.split(" ")[0][0]} */}
+              {user?.username?.split(" ")[0][0] ?? ""}
             </Menu.Button>
           ) : (
             <Menu.Button as="button" className="absolute top-0 right-0">
